@@ -1,5 +1,5 @@
 import { html, TemplateResult } from 'lit-html';
-import '../template-list.js';
+import '../select-list.js';
 
 export default {
   title: 'TemplateList',

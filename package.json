@@ -57,7 +57,8 @@
         {
           "ignorePackages": true
         }
-      ]
+      ],
+      "lines-between-class-members": "warn"
     }
   },
   "prettier": {

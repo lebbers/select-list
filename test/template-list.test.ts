@@ -1,31 +1,49 @@
 import { html, fixture, expect } from '@open-wc/testing';
 
-import { TemplateList } from '../src/TemplateList.js';
-import '../template-list.js';
+import { SelectList } from '../src/select-list.js';
+import '../select-list.js';
 
-describe('TemplateList', () => {
-  it('has a default title "Hey there" and counter 5', async () => {
-    const el = await fixture<TemplateList>(html`<template-list></template-list>`);
+describe('SelectList', () => {
+  it('default renders as expected', async () => {
+    const el = await fixture<SelectList>(
+      html`<select-list></select-list>`
+    );
 
-    expect(el.title).to.equal('Hey there');
-    expect(el.counter).to.equal(5);
+    expect(el).shadowDom.to.equal(
+      '<ul><list-item>No items</list-items></ul>',
+      {
+        ignoreTags: ['slot'],
+      }
+    );
+    expect(el).dom.to.equal('<select-list></select-list>');
   });
 
-  it('increases the counter on button click', async () => {
-    const el = await fixture<TemplateList>(html`<template-list></template-list>`);
-    el.shadowRoot!.querySelector('button')!.click();
+  it('with item renders as expected', async () => {
+    const el = await fixture<SelectList>(
+      html`<select-list><list-item value="1">One</list-item></select-list>`
+    );
 
-    expect(el.counter).to.equal(6);
+    expect(el).shadowDom.to.equal(
+      '<ul><list-item>One</list-item><list-item>Number of slot elements: 1</list-item></ul>',
+      {
+        ignoreTags: ['slot'],
+      }
+    );
+    expect(el).dom.to.equal('<select-list></select-list>');
   });
 
   it('can override the title via attribute', async () => {
-    const el = await fixture<TemplateList>(html`<template-list title="attribute title"></template-list>`);
+    const el = await fixture<SelectList>(
+      html`<select-list title="attribute title"></select-list>`
+    );
 
     expect(el.title).to.equal('attribute title');
   });
 
   it('passes the a11y audit', async () => {
-    const el = await fixture<TemplateList>(html`<template-list></template-list>`);
+    const el = await fixture<SelectList>(
+      html`<select-list></select-list>`
+    );
 
     await expect(el).shadowDom.to.be.accessible();
   });

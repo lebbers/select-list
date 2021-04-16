@@ -1,1 +1,1 @@
-export { TemplateList } from './src/TemplateList.js';
+export { SelectList as TemplateList } from './src/select-list.js';
