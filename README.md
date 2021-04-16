@@ -1,19 +1,19 @@
-# \<template-list>
+# \<select-list>
 
 This webcomponent follows the [open-wc](https://github.com/open-wc/open-wc) recommendation.
 
 ## Installation
 ```bash
-npm i template-list
+npm i select-list
 ```
 
 ## Usage
 ```html
 <script type="module">
-  import 'template-list/template-list.js';
+  import 'select-list/select-list.js';
 </script>
 
-<template-list></template-list>
+<select-list></select-list>
 ```
 
 ## Linting with ESLint, Prettier, and Types

@@ -3,7 +3,7 @@ import '../select-list.js';
 
 export default {
   title: 'TemplateList',
-  component: 'template-list',
+  component: 'select-list',
   argTypes: {
     title: { control: 'text' },
     counter: { control: 'number' },
@@ -30,13 +30,13 @@ const Template: Story<ArgTypes> = ({
   textColor,
   slot,
 }: ArgTypes) => html`
-  <template-list
-    style="--template-list-text-color: ${textColor || 'black'}"
+  <select-list
+    style="--select-list-text-color: ${textColor || 'black'}"
     .title=${title}
     .counter=${counter}
   >
     ${slot}
-  </template-list>
+  </select-list>
 `;
 
 export const Regular = Template.bind({});

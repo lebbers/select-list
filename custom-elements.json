@@ -2,7 +2,7 @@
   "version": 2,
   "tags": [
     {
-      "name": "template-list",
+      "name": "select-list",
       "description": "A component with a title and an action counter",
       "properties": [
         {
@@ -22,7 +22,7 @@
       "slots": [],
       "cssProperties": [
         {
-          "name": "--template-list-text-color",
+          "name": "--select-list-text-color",
           "description": "Main Text Color",
           "type": "Color"
         }
