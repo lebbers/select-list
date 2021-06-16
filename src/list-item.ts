@@ -6,7 +6,13 @@ export interface OptionValue {
   selected: boolean;
 }
 
-export class ListItem extends LitElement {
+export interface ListItemProps {
+  value: string;
+  selected: boolean;
+  disabled: boolean;
+}
+
+export class ListItem extends LitElement implements ListItemProps {
   static styles = css`
     :host {
       border: 1px solid rgba(0, 0, 0, 0.125);

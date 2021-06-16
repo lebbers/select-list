@@ -2,7 +2,7 @@ import { html, TemplateResult } from 'lit-html';
 import '../select-list.js';
 
 export default {
-  title: 'TemplateList',
+  title: 'SelectList',
   component: 'select-list',
   argTypes: {
     title: { control: 'text' },
@@ -39,17 +39,7 @@ const Template: Story<ArgTypes> = ({
   </select-list>
 `;
 
-export const Regular = Template.bind({});
-
-export const CustomTitle = Template.bind({});
-CustomTitle.args = {
-  title: 'My title',
-};
-
-export const CustomCounter = Template.bind({});
-CustomCounter.args = {
-  counter: 123456,
-};
+export const Empty = Template.bind({});
 
 export const SlottedContent = Template.bind({});
 SlottedContent.args = {
